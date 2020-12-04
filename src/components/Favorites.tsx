@@ -24,7 +24,7 @@ type FavoriteListProps = {
   removeFavoriteJoke(joke: Joke): void;
 }
 
-const FavoriteList = (props: FavoriteListProps) => {
+const Favorites = (props: FavoriteListProps) => {
   // if (props.favoriteJokes.length === 0)
   const items = props.favoriteJokes.map((joke, i) =>
     <FavoriteListItem joke={joke} key={i} removeFavoriteJoke={props.removeFavoriteJoke} />
@@ -58,4 +58,4 @@ const mapDispatchToProps = (dispatch: any) => ({
   clearFavoriteJokes: () => dispatch(clearFavoriteJokes()),
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(FavoriteList)
+export default connect(mapStateToProps, mapDispatchToProps)(Favorites)

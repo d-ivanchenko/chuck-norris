@@ -1,78 +1,80 @@
-html, body, #root {
-    height: 100%;
+html,
+body,
+#root {
+  height: 100%;
 }
 
 body {
-    margin: 0;
+  margin: 0;
 }
 
 #root {
-    background: #c4c4c4;
-    display: flex;
+  background: #c4c4c4;
+  display: flex;
 }
 
 h3 {
-    color: #333;
+  color: #333;
 }
 
 .App {
-    font-family: "Courier New", Courier, monospace;
-    text-align: center;
-    flex: 1;
-    justify-self: center;
-    align-self: center;
+  font-family: "Courier New", Courier, monospace;
+  text-align: center;
+  flex: 1;
+  justify-self: center;
+  align-self: center;
 }
 
 .joke {
-    margin: 0 1rem;
+  margin: 0 1rem;
 }
 
 .joke-btn {
-    /*display: flex;*/
-    /*justify-content: center;*/
-    /*flex-direction: column;*/
+  /*display: flex;*/
+  /*justify-content: center;*/
+  /*flex-direction: column;*/
 }
 
 .trash {
-    cursor: pointer;
-    color: red;
-    position: absolute;
-    right: 0;
-    padding-right: 2rem;
+  cursor: pointer;
+  color: red;
+  position: absolute;
+  right: 0;
+  padding-right: 2rem;
 }
 
 .favorites-list {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .favorites-list-item {
-    flex: 1 0 21%;
-    padding: 0.25em 1em;
-    margin: 1rem;
-    color: #333;
-    background: #fff;
+  flex: 1 0 21%;
+  padding: 0.25em 1em;
+  margin: 1rem;
+  color: #333;
+  background: #fff;
 }
 
 .favorites-list-item:hover {
-    transporent: 0.5;
-    background: #dc5b5b;
-    color: #fff;
-    cursor: pointer;
-    content: 'asdsadasdasd'
+  transporent: 0.5;
+  background: #dc5b5b;
+  color: #fff;
+  cursor: pointer;
+  content: "asdsadasdasd";
 }
 
 @media screen and (max-width: 800px) {
-    .favorites-list {
-        flex: 1;
-        flex-direction: column;
-    }
+  .favorites-list {
+    flex: 1;
+    flex-direction: column;
+  }
 
-    .favorites-list-item {
-        flex: 1;
-    }
+  .favorites-list-item {
+    flex: 1;
+  }
 
-    .joke-btn {
-        flex-direction: column;
-    }
+  .joke-btn {
+    flex-direction: column;
+  }
 }
