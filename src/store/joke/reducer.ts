@@ -1,19 +1,10 @@
-import { ADD_JOKE, CLEAR_JOKE, JokeActionTypes, JokeState } from "./types";
+import { ADD_JOKE, JokeActionTypes } from "./types";
+import initialState from "../initialState";
 
-const initialState: JokeState = {
-  joke: null,
-};
-
-const joke = (state = initialState, action: JokeActionTypes): JokeState => {
+const joke = (state = initialState.joke, action: JokeActionTypes) => {
   switch (action.type) {
     case ADD_JOKE:
-      return {
-        joke: action.payload,
-      };
-    case CLEAR_JOKE:
-      return {
-        joke: null,
-      };
+      return action.payload;
     default:
       return state;
   }

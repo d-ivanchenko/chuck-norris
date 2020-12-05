@@ -18,9 +18,4 @@ interface AddJokeAction {
   payload: Joke;
 }
 
-export const CLEAR_JOKE = "CLEAR_JOKE";
-interface ClearJokeAction {
-  type: typeof CLEAR_JOKE;
-}
-
-export type JokeActionTypes = AddJokeAction | ClearJokeAction;
+export type JokeActionTypes = AddJokeAction;

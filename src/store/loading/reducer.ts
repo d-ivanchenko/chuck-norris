@@ -1,18 +1,10 @@
-import { LoadingActionTypes, LoadingState, SET_LOADING } from "./types";
+import { LoadingActionTypes, SET_LOADING } from "./types";
+import initialState from "../initialState";
 
-const initialState: LoadingState = {
-  loading: false,
-};
-
-const loading = (
-  state = initialState,
-  action: LoadingActionTypes
-): LoadingState => {
+const loading = (state = initialState.loading, action: LoadingActionTypes) => {
   switch (action.type) {
     case SET_LOADING:
-      return {
-        loading: action.payload,
-      };
+      return action.payload;
     default:
       return state;
   }
