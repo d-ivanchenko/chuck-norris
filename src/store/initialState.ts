@@ -1,13 +1,11 @@
 import { JokeState } from "./joke/types";
 import { FavoritesState } from "./favorites/types";
-import { LoadingState } from "./loading/types";
 
-export type AppState = FavoritesState & LoadingState & JokeState;
+export type AppState = FavoritesState & JokeState;
 
 const initialState: AppState = {
   joke: null,
   favorites: [],
-  loading: false,
 };
 
 export default initialState;

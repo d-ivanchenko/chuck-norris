@@ -5,11 +5,12 @@ import {
   REMOVE_FAVORITE,
 } from "./types";
 import initialState from "../initialState";
+import { Joke } from "../joke/types";
 
 const favorites = (
   state = initialState.favorites,
   action: FavoritesActionTypes
-) => {
+): Joke[] => {
   switch (action.type) {
     case ADD_FAVORITE:
       if (state.length >= 10) {
