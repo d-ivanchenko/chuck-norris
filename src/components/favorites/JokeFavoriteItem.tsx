@@ -10,7 +10,7 @@ const JokeFavoriteItem = ({ joke, removeJoke }: Props) => {
   return (
     <div
       role="presentation"
-      className="favorites-list-item"
+      className="joke-text favorite-item"
       onClick={() => removeJoke(joke)}
     >
       {joke.value}

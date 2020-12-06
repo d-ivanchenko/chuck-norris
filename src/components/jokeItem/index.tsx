@@ -46,23 +46,33 @@ const JokeItem = ({
   };
 
   return (
-    <div className="joke-container">
-      <div className="joke-text">{joke ? joke.value : "..."}</div>
-
+    <div className="container">
       <div className="joke-controls">
-        <Button
-          title={!stream ? "Start" : "Stop"}
-          onClick={getRandomJokeByInterval}
-        />
-        <Button title="Get joke" onClick={getRandomJoke} />
-        {joke && (
-          <Button title="Favorite" onClick={() => addToFavoriteList(joke)} />
+        {stream ? (
+          <input
+            type="image"
+            className="joke-controls-item"
+            onMouseDown={getRandomJokeByInterval}
+            alt="pause joke stream"
+            src="/images/pause.png"
+          />
+        ) : (
+          <input
+            type="image"
+            className="joke-controls-item"
+            onMouseDown={getRandomJokeByInterval}
+            alt="play joke stream"
+            src="/images/play.png"
+          />
         )}
-        <Button
-          title="Favorite List"
-          onClick={() => console.log("show favorite list")}
-        />
       </div>
+      <Button title="Get one" onClick={getRandomJoke} />
+      {joke && (
+        <>
+          <Button title="Favorite" onClick={() => addToFavoriteList(joke)} />
+          <div className="joke-text">{joke.value}</div>
+        </>
+      )}
     </div>
   );
 };

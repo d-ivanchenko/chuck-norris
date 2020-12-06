@@ -8,7 +8,7 @@ import JokeFavoriteItem from "./JokeFavoriteItem";
 import Button from "../shared/Button";
 
 const mapState = (state: RootState) => ({
-  items: state.favorites,
+  favorites: state.favorites,
 });
 
 const mapDispatch = (dispatch: any) => ({
@@ -21,11 +21,11 @@ const connector = connect(mapState, mapDispatch);
 type PropsFromRedux = ConnectedProps<typeof connector>;
 
 const Favorites = ({
-  items,
+  favorites,
   removeFavoriteJoke,
   clearFavoriteJokes,
 }: PropsFromRedux) => {
-  const jokes = items.map((joke) => (
+  const jokes = favorites.map((joke) => (
     <JokeFavoriteItem
       key={joke.id}
       joke={joke}
@@ -33,13 +33,14 @@ const Favorites = ({
     />
   ));
 
+  if (!favorites.length) return null;
+
   return (
-    <div className="favorite-container">
+    <div className="container">
+      <h3>Favorites</h3>
       <div className="favorite-list">{jokes}</div>
       <div className="favorite-controls">
-        {!!items.length && (
-          <Button title="clear" onClick={clearFavoriteJokes} />
-        )}
+        <Button title="Clear" onClick={clearFavoriteJokes} />
       </div>
     </div>
   );

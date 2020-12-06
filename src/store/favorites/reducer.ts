@@ -13,7 +13,8 @@ const favorites = (
 ): Joke[] => {
   switch (action.type) {
     case ADD_FAVORITE:
-      if (state.length >= 10) {
+      if (state.includes(action.payload)) return state;
+      if (state.length >= 5) {
         return [...state.slice(1), action.payload];
       }
       return [...state, action.payload];

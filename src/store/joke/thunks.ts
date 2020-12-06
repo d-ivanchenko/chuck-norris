@@ -16,7 +16,6 @@ export const thunkGetJoke = (): ThunkAction<
     const { data } = await axios.get<Joke>(
       "https://api.chucknorris.io/jokes/random"
     );
-    console.log(data);
     dispatch(addJoke(data));
   } catch (err) {
     // todo добавить обработку ошибок

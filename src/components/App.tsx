@@ -8,6 +8,7 @@ import Favorites from "./favorites";
 const App = () => {
   return (
     <div className="App">
+      <h1>Chuck Norris jokes</h1>
       <JokeItem />
       <Favorites />
     </div>
