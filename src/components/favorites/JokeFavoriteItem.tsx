@@ -3,12 +3,16 @@ import { Joke } from "../../store/joke/types";
 
 type Props = {
   joke: Joke;
-  removeFavorite(joke: Joke): void;
+  removeJoke(joke: Joke): void;
 };
 
-const JokeFavoriteItem = ({ joke, removeFavorite }: Props) => {
+const JokeFavoriteItem = ({ joke, removeJoke }: Props) => {
   return (
-    <div className="favorites-list-item" onClick={() => removeFavorite(joke)}>
+    <div
+      role="presentation"
+      className="favorites-list-item"
+      onClick={() => removeJoke(joke)}
+    >
       {joke.value}
     </div>
   );

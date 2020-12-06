@@ -16,6 +16,6 @@ export const removeFavorite = (joke: Joke): FavoritesActionTypes => ({
   payload: joke,
 });
 
-export const clearFavorites = () => ({
+export const clearFavorites = (): FavoritesActionTypes => ({
   type: CLEAR_FAVORITES,
 });

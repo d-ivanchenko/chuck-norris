@@ -2,8 +2,8 @@ import React from "react";
 
 import "../styles.css";
 
-import JokeItem from "./favorites/cnt";
-import Favorites from "./favorites/cnt";
+import JokeItem from "./jokeItem";
+import Favorites from "./favorites";
 
 const App = () => {
   return (
